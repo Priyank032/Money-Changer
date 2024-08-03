@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "5d0340b7-8d06-481b-ba9c-a22bdbcaf3b5",
+		"name": "Money Changer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25870278",
+		"_collection_link": "https://galactic-desert-804622.postman.co/workspace/My-Workspace~c2643cfa-5efa-4d38-85b8-1a791d8ca950/collection/25870278-5d0340b7-8d06-481b-ba9c-a22bdbcaf3b5?action=share&source=collection_link&creator=25870278"
+	},
+	"item": [
+		{
+			"name": "Request-change",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobileNumber\": \"9898765677\",\n    \"amount\":356\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/money-changer/change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"money-changer",
+						"change"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Changel Request Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"7898765677\",\n    \"amount\":356\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"change"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-OpTFON0WoIbcZ3f95MXjunVQW8U\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 19:20:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Change Request Successfully Executed\",\n    \"data\": {\n        \"1\": 1,\n        \"5\": 1,\n        \"10\": 1,\n        \"20\": 17\n    }\n}"
+				},
+				{
+					"name": "Mobile Number Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"5898765677\",\n    \"amount\": 400\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"change"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-pYGmlb5h2IIlh5wQBRRku3KuvrY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 19:16:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": [\n        \"Mobile number must be a valid 10-digit number starting with 6, 7, 8, or 9\"\n    ],\n    \"data\": null\n}"
+				},
+				{
+					"name": "Amount Exceed Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"7898765677\",\n    \"amount\": 600\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"change"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-pUCuuksQDm5704wBpVwi8ZkianE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 19:19:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Invalid amount. Must be less than or equal to 500.\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "Minimum Amount Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"7898765677\",\n    \"amount\":6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"change"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-awLMBWft0zZLfTnvcru8BtQqbzA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 19:19:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": [\n        \"amount must not be less than 10\"\n    ],\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobileNumber\": \"9898765677\",\n    \"startDate\": \"2024-07-22\",\n    \"endDate\": \"2024-07-23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/money-changer/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"money-changer",
+						"transaction"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Transactions Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"9898765677\",\n    \"startDate\": \"2024-07-22\",\n    \"endDate\": \"2024-07-23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"transaction"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1904"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"770-GxXDYtQKnS6U8izjQx0rEbxZFr4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 18:19:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Transactions Fetched Successfully\",\n    \"data\": [\n        {\n            \"id\": \"10ce041d-5dfd-481c-b2b4-5024b429a473\",\n            \"createdAt\": \"2024-07-22T15:12:26.110Z\",\n            \"updatedAt\": \"2024-07-22T15:12:26.110Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"FAILURE\",\n            \"remarks\": \"\\\"'Denominations not available.'\\\"\"\n        },\n        {\n            \"id\": \"3f56a936-d60a-4f59-ba02-78da37741cd0\",\n            \"createdAt\": \"2024-07-22T15:12:25.437Z\",\n            \"updatedAt\": \"2024-07-22T15:12:25.437Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"FAILURE\",\n            \"remarks\": \"\\\"'Denominations not available.'\\\"\"\n        },\n        {\n            \"id\": \"3764866c-2c1d-46e5-93d2-f89817254af1\",\n            \"createdAt\": \"2024-07-22T15:12:24.787Z\",\n            \"updatedAt\": \"2024-07-22T15:12:24.787Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=89|10=1\\\"\"\n        },\n        {\n            \"id\": \"eda4a81f-5a08-40aa-b770-912f762b6180\",\n            \"createdAt\": \"2024-07-22T15:12:24.109Z\",\n            \"updatedAt\": \"2024-07-22T15:12:24.109Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=1|10=45\\\"\"\n        },\n        {\n            \"id\": \"8d5fb6fc-8118-478f-9b12-d25386bf7aca\",\n            \"createdAt\": \"2024-07-22T15:12:23.517Z\",\n            \"updatedAt\": \"2024-07-22T15:12:23.517Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=1|10=45\\\"\"\n        },\n        {\n            \"id\": \"05f7e882-3507-44b9-9afa-96fe69c40812\",\n            \"createdAt\": \"2024-07-22T15:12:22.903Z\",\n            \"updatedAt\": \"2024-07-22T15:12:22.903Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=1|10=5|20=20\\\"\"\n        },\n        {\n            \"id\": \"5aed837d-e26f-4759-af84-3ee9ae190507\",\n            \"createdAt\": \"2024-07-22T15:12:22.122Z\",\n            \"updatedAt\": \"2024-07-22T15:12:22.122Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=1|10=1|20=22\\\"\"\n        },\n        {\n            \"id\": \"b3182c8a-d885-4a31-8248-1a42bca8aa13\",\n            \"createdAt\": \"2024-07-22T15:12:18.880Z\",\n            \"updatedAt\": \"2024-07-22T15:12:18.880Z\",\n            \"mobileNumber\": \"9898765677\",\n            \"amountRequested\": 456,\n            \"status\": \"SUCCESS\",\n            \"remarks\": \"\\\"1=1|5=1|10=1|20=22\\\"\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Denominations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denomination\":1,\"count\":100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/money-changer/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"money-changer",
+						"count"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Denominations Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"denomination\":1,\"count\":100}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/money-changer/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"money-changer",
+								"count"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6e-5GuRw2dMR64tuUymL4jx+1/+BXc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jul 2024 19:21:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Denominations Fetched Successfully\",\n    \"data\": {\n        \"1\": 99,\n        \"2\": 100,\n        \"5\": 99,\n        \"10\": 99,\n        \"20\": 63\n    }\n}"
+				}
+			]
+		}
+	]
+}
